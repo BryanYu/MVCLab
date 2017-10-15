@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e7a2da857684be1a4e890da7b6427a2" Name="Diagram1">
+        <EntityTypeShape EntityType="OneCenterModel.Activity" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.ActivityRecord" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.Admin" Width="1.5" PointX="7.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.Member" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.ProductRecord" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.Schedule" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.Set" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.SetDetail" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.Ticket" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OneCenterModel.TicketRecord" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="OneCenterModel.FK_Schedule_Activity" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_SetDetail_Activity" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_TicketRecord_Activity" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_ActivityRecord_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_ActivityRecord_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_ProductRecord_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_TicketRecord_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_SetDetail_Set" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_TicketRecord_Set" ManuallyRouted="false" />
+        <AssociationConnector Association="OneCenterModel.FK_TicketRecord_Ticket" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
