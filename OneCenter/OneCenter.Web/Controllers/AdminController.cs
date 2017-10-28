@@ -1,5 +1,6 @@
 ﻿using OneCenter.BLL.Admin;
 using OneCenter.Models.ViewModels.Admin;
+using OneCenter.Web.Attribute;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,8 @@ namespace OneCenter.Web.Controllers
         // POST: Admin/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [LogActionFilter]
+        [AllowAnonymous]
         public ActionResult Create(AdminViewModel model)
         {
             try
