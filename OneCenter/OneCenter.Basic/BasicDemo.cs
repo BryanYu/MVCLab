@@ -59,7 +59,7 @@ namespace OneCenter.Basic
             this.GetName(1, "Bryan");
             this.GetName(1, "Bryan"); /// 第三個參數可丟可不丟
 
-            #endregion
+            #endregion 多載
 
             #region 泛型
 
@@ -71,7 +71,7 @@ namespace OneCenter.Basic
             List<TestB> testBList = new List<TestB>();
             //testAList.Add(new TestB()); ->Error
 
-            #endregion
+            #endregion 泛型
 
             #region 條件式編譯
 
@@ -87,7 +87,7 @@ namespace OneCenter.Basic
             Console.WriteLine("Release");
 #endif
 
-            #endregion
+            #endregion 條件式編譯
 
             #region 部分類別(Partial Class)
 
@@ -101,7 +101,7 @@ namespace OneCenter.Basic
             //Partial.DemoA.cs裡面的方法
             demoA.MethodB();
 
-            #endregion
+            #endregion 部分類別(Partial Class)
 
             #region 擴充方法(Extension)
 
@@ -114,7 +114,10 @@ namespace OneCenter.Basic
             int i = 0;
             i = i.GetNextNumber(); // 擴充方法(在IntergerExtension.cs)
 
-            #endregion
+            int j = 5;
+            j = j.GetMutiple(10);
+
+            #endregion 擴充方法(Extension)
         }
     }
 }

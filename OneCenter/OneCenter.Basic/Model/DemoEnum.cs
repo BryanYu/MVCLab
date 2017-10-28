@@ -9,10 +9,10 @@ namespace OneCenter.Basic.Model
 {
     public enum DemoEnum
     {
-        [Description("One")]
+        [Description("Number1")]
         One = 1,
 
-        [Description("Two")]
+        [Description("Number2")]
         Two = 2
     }
 }

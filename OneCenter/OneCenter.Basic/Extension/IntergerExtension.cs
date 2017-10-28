@@ -15,5 +15,10 @@ namespace OneCenter.Basic.Extension
         {
             return arg + 1;
         }
+
+        public static int GetMutiple(this int arg, int arg2)
+        {
+            return arg * arg2;
+        }
     }
 }
