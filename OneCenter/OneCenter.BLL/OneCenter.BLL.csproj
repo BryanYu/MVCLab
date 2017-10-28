@@ -43,6 +43,15 @@
     <Compile Include="Admin\AdminService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OneCenter.DAL\OneCenter.DAL.csproj">
+      <Project>{4d8b739c-37cd-413e-aaa6-ed25be749d4a}</Project>
+      <Name>OneCenter.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneCenter.Models\OneCenter.Models.csproj">
+      <Project>{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C}</Project>
+      <Name>OneCenter.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

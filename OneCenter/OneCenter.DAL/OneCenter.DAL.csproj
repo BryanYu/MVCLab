@@ -72,9 +72,6 @@
     <Compile Include="ActivityRecord.cs">
       <DependentUpon>OneCenter.tt</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs">
-      <DependentUpon>OneCenter.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\AdminDAL.cs" />
     <Compile Include="Member.cs">
       <DependentUpon>OneCenter.tt</DependentUpon>
@@ -106,6 +103,9 @@
       <DependentUpon>OneCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="SetDetail.cs">
+      <DependentUpon>OneCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdmin.cs">
       <DependentUpon>OneCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="Ticket.cs">

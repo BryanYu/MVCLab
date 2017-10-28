@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OneCenter.BLL.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,24 @@ namespace OneCenter.Web.Controllers
 {
     public class AdminController : Controller
     {
+        /// <summary>
+        /// AdminService
+        /// </summary>
+        private AdminService _service;
+
+        /// <summary>
+        /// AdminController Constructor
+        /// </summary>
+        public AdminController()
+        {
+            this._service = new AdminService();
+        }
+
         // GET: Admin
         public ActionResult Index()
         {
-            return View();
+            var result = this._service.GetAdmins();
+            return View(result);
         }
 
         // GET: Admin/Details/5

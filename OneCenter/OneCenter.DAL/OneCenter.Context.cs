@@ -27,7 +27,6 @@ namespace OneCenter.DAL
     
         public virtual DbSet<Activity> Activity { get; set; }
         public virtual DbSet<ActivityRecord> ActivityRecord { get; set; }
-        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<ProductRecord> ProductRecord { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
@@ -35,5 +34,6 @@ namespace OneCenter.DAL
         public virtual DbSet<SetDetail> SetDetail { get; set; }
         public virtual DbSet<Ticket> Ticket { get; set; }
         public virtual DbSet<TicketRecord> TicketRecord { get; set; }
+        public virtual DbSet<SystemAdmin> SystemAdmin { get; set; }
     }
 }

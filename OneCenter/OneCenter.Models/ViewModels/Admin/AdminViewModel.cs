@@ -12,6 +12,11 @@ namespace OneCenter.Models.ViewModels.Admin
     public class AdminViewModel
     {
         /// <summary>
+        /// 序號
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// 帳號
         /// </summary>
         public string Account { get; set; }

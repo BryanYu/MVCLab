@@ -12,7 +12,7 @@ namespace OneCenter.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin
+    public partial class SystemAdmin
     {
         public int Id { get; set; }
         public string Account { get; set; }
