@@ -47,7 +47,6 @@ namespace OneCenter.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [LogActionFilter]
-        [AllowAnonymous]
         public ActionResult Create(AdminViewModel model)
         {
             try
