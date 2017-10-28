@@ -1,5 +1,6 @@
 ﻿using OneCenter.DAL.DAL;
 using OneCenter.Models.ViewModels.Admin;
+using OneCenter.Utility.Cryptography;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace OneCenter.BLL.Admin
 {
+    /// <summary>
+    /// AdminService
+    /// </summary>
     public class AdminService
     {
         /// <summary>
@@ -42,6 +46,17 @@ namespace OneCenter.BLL.Admin
                 });
             }
             return result;
+        }
+
+        /// <summary>
+        /// 新增管理員
+        /// </summary>
+        /// <param name="model"></param>
+        public void AddAdmin(AdminViewModel model)
+        {
+            /// Password 應該是要經過加密 不可以用明碼存
+            model.Password = Cryptography.GetMd5Hash(model.Password);
+            this._dal.Insert(model.Account, model.Password, model.Name);
         }
     }
 }

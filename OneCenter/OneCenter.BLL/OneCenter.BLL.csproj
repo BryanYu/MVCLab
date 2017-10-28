@@ -52,6 +52,10 @@
       <Project>{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C}</Project>
       <Name>OneCenter.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OneCenter.Utility\OneCenter.Utility.csproj">
+      <Project>{413109AD-E3B2-4940-A634-3B73DBE2F347}</Project>
+      <Name>OneCenter.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

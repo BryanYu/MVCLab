@@ -1,4 +1,5 @@
 ﻿using OneCenter.BLL.Admin;
+using OneCenter.Models.ViewModels.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,13 +44,18 @@ namespace OneCenter.Web.Controllers
 
         // POST: Admin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(AdminViewModel model)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                this._service.AddAdmin(model);
+                return View();
             }
             catch
             {
