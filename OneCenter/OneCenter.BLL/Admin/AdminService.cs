@@ -58,5 +58,41 @@ namespace OneCenter.BLL.Admin
             model.Password = Cryptography.GetMd5Hash(model.Password);
             this._dal.Insert(model.Account, model.Password, model.Name);
         }
+
+        /// <summary>
+        /// 更新使用者
+        /// </summary>
+        /// <param name="model"></param>
+        public void UpdateAdmin(AdminViewModel model)
+        {
+            var admin = this._dal.GetAdmin(model.Id);
+
+            if (admin == null)
+            {
+                throw new Exception("使用者不存在");
+            }
+            var hashPassword = Cryptography.GetMd5Hash(model.Password);
+            if (hashPassword != admin.Password)
+            {
+                model.Password = hashPassword;
+            }
+
+            this._dal.Update(model.Id, model.Account, model.Password, model.Name);
+        }
+
+        /// <summary>
+        /// 刪除使用者
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteAdmin(int id)
+        {
+            var admin = this._dal.GetAdmin(id);
+
+            if (admin == null)
+            {
+                throw new Exception("使用者不存在");
+            }
+            this._dal.Delete(id);
+        }
     }
 }

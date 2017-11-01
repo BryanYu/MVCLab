@@ -9,6 +9,9 @@ using System.Web.Mvc;
 
 namespace OneCenter.Web.Controllers
 {
+    /// <summary>
+    /// 管理員Controller
+    /// </summary>
     public class AdminController : Controller
     {
         /// <summary>
@@ -24,26 +27,30 @@ namespace OneCenter.Web.Controllers
             this._service = new AdminService();
         }
 
-        // GET: Admin
+        /// <summary>
+        /// 取得所有管理員列表
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             var result = this._service.GetAdmins();
             return View(result);
         }
 
-        // GET: Admin/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Admin/Create
+        /// <summary>
+        /// 取得建立管理員檢視
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Create
+        /// <summary>
+        /// 建立管理員
+        /// </summary>
+        /// <param name="model">model</param>
+        /// <returns><see cref="ActionResult"/></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         [LogActionFilter]
@@ -51,13 +58,14 @@ namespace OneCenter.Web.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
                 if (!ModelState.IsValid)
                 {
                     return View();
                 }
                 this._service.AddAdmin(model);
-                return View();
+
+                //新增完回首頁
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -65,46 +73,70 @@ namespace OneCenter.Web.Controllers
             }
         }
 
-        // GET: Admin/Edit/5
+        /// <summary>
+        /// 取得編輯管理員檢視
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <returns><see cref="ActionResult"/></returns>
         public ActionResult Edit(int id)
         {
-            return View();
+            var result = this._service.GetAdmins().FirstOrDefault(item => item.Id == id);
+            return View(result);
         }
 
-        // POST: Admin/Edit/5
+        /// <summary>
+        /// 編輯管理員
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(AdminViewModel model)
         {
             try
             {
-                // TODO: Add update logic here
-
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                this._service.UpdateAdmin(model);
+                // 編輯完回首頁
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception e)
             {
+                ViewBag.Error = e.Message;
                 return View();
             }
         }
 
-        // GET: Admin/Delete/5
-        public ActionResult Delete(int id)
+        /// <summary>
+        /// 取得刪除管理員檢視
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Delete(int id, string temp)
         {
-            return View();
+            var result = this._service.GetAdmins().FirstOrDefault(item => item.Id == id);
+            return View(result);
         }
 
-        // POST: Admin/Delete/5
+        /// <summary>
+        /// 刪除管理者
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                this._service.DeleteAdmin(id);
+                // 刪除完回首頁
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception e)
             {
+                ViewBag.Error = e.Message;
                 return View();
             }
         }
