@@ -23,9 +23,19 @@ namespace OneCenter.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(
+                new ScriptBundle("~/bundles/sbadmin").Include(
+                    "~/Scripts/metisMenu.min.js",
+                    "~/Scripts/sb-admin-2.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(
+                new StyleBundle("~/Content/sbadmin").Include(
+                    "~/Content/metisMenu.min.css",
+                    "~/Content/sb-admin-2.min.css",
+                    "~/Content/font-awesome.min.css"));
         }
     }
 }
