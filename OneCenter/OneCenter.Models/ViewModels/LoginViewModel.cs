@@ -12,7 +12,7 @@ namespace OneCenter.Models.ViewModels.Auth
         [Required(AllowEmptyStrings = false, ErrorMessage = "請輸入帳號")]
         public string Account { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "請輸入密碼ㄖ")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "請輸入密碼")]
         public string Password { get; set; }
     }
 }

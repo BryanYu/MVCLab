@@ -94,5 +94,16 @@ namespace OneCenter.BLL.Admin
             }
             this._dal.Delete(id);
         }
+
+        public AdminViewModel GetAdmin(string account, string password)
+        {
+            var hashPassword = Cryptography.GetMd5Hash(password);
+            var admin = this._dal.GetAdmins()
+                .Where(item => item.Account == account && item.Password == hashPassword)
+                .Select(item2 => new AdminViewModel { Id = item2.Id, Account = item2.Account })
+                .FirstOrDefault();
+
+            return admin;
+        }
     }
 }

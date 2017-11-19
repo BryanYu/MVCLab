@@ -12,6 +12,7 @@ namespace OneCenter.Web.Controllers
     /// <summary>
     /// 管理員Controller
     /// </summary>
+    [Authorize]
     public class AdminController : Controller
     {
         /// <summary>
@@ -34,9 +35,6 @@ namespace OneCenter.Web.Controllers
         public ActionResult Index()
         {
             var result = this._service.GetAdmins();
-            var list = new SelectList(result, "Account", "Name");
-            ViewBag.DrowDownList = list;
-
             return View(result);
         }
 

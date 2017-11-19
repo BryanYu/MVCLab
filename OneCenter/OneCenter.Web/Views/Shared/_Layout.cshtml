@@ -227,7 +227,10 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            @using (Html.BeginForm("Logout", "Auth", FormMethod.Post))
+                            {
+                                <button type="submit" class="btn btn-primary">登出</button>
+                            }
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
