@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("新增", "Create")
+    @Html.ActionLink("新增", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -20,7 +20,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th></th>
+        <th>編輯</th>
+        <th>刪除</th>
     </tr>
 
     @foreach (var item in Model)
@@ -37,9 +38,10 @@
             </td>
             <td>
 
-                @Html.ActionLink("編輯", "Edit", new { id = item.Id }) |
-
-                @Html.ActionLink("刪除", "Delete", new { id = item.Id })
+                @Html.ActionLink("編輯", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning" })
+            </td>
+            <td>
+                @Html.ActionLink("刪除", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
