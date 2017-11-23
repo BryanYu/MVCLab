@@ -1,0 +1,95 @@
+﻿@model TempData
+@{
+    ViewBag.Title = "$title$";
+}
+
+<div class="form-horizontal">
+    <h4>HtmlHelper.Display、DisplayFor、DisplayForModel</h4>
+    <hr />
+    <div class="form-group">
+        Display - 用傳進來的ViewModel屬性名稱建立
+        <div class="col-md-10">
+            @Html.Display("Id")
+        </div>
+    </div>
+    <div class="form-group">
+        DisplayFor - 用傳入到ViewModel建立
+        <div class="col-md-10">
+            @Html.DisplayFor(item => item.Id)
+        </div>
+    </div>
+    <div class="form-group">
+        DisplayForModel - 用傳入到Razor的 ViewModel，搭配自訂的Template
+        TestDisplayTemplate路徑在->Views\Shared\DisplayTemplates\TestDisplayTemplate.cshtml
+        <div class="col-md-10">
+            @Html.DisplayForModel("TestDisplayTemplate")
+        </div>
+    </div>
+</div>
+
+<div class="form-horizontal">
+    <h4>HtmlHelper.Editor、EditorFor、EditorForModel</h4>
+    <hr />
+    <div class="form-group">
+        Editor - 用傳進來的ViewModel屬性名稱建立可編輯的Html Tag
+        <div class="col-md-10">
+            @Html.Editor("Id")
+        </div>
+    </div>
+    <div class="form-group">
+        DisplayFor - 用傳入到ViewModel建立可編輯的Html Tag
+        <div class="col-md-10">
+            @Html.EditorFor(item => item.Id)
+        </div>
+    </div>
+    <div class="form-group">
+        DisplayForModel - 用傳入到Razor的 ViewModel，搭配自訂的Template建立可編輯的Html Tag
+        TestEditorTemplate路徑在->Views\Shared\EditorTemplates\TestEditorTemplate.cshtml
+        <div class="col-md-10">
+            @Html.EditorForModel("TestEditorTemplate")
+        </div>
+    </div>
+</div>
+
+<div class="form-horizontal">
+    <h4>其餘常用的HtmlHelper </h4>
+    <h4>XXXX直接使用指定的值建立Html Tag</</h4>
+    <h4>(推薦使用)XXXXFor使用Lamda指定的ViewModel建立Html Tag</</h4>
+    <hr />
+    <div class="form-group">
+        <div class="control-label col-md-2">Password、PasswordFor</div>
+        <div class="col-md-10">
+            @Html.Password("Password", "1234")
+            @Html.PasswordFor(item => item.Password)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">TextBox、TextBoxFor</div>
+        <div class="col-md-10">
+            @Html.TextBox("Name", "1234")
+            @Html.TextBoxFor(item => item.Name)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">CheckBox、CheckBoxFor</div>
+        <div class="col-md-10">
+            IsActive: @Html.CheckBox("IsActive", true)
+            IsActive: @Html.CheckBoxFor(item => item.IsActive)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">RadioButton、RadioButtonFor</div>
+        <div class="col-md-10">
+            IsActive: @Html.RadioButton("IsActive", "1")
+            IsActive: @Html.RadioButtonFor(item => item.IsActive, false)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">DrowDownList、DrowDownListFor</div>
+        <div class="col-md-10">
+            @Html.DropDownList("DrowDownList", Model.DrowSelectList)
+            @Html.DropDownListFor(item => item.DrowSelectList, Model.DrowSelectList)
+        </div>
+    </div>
+</div>

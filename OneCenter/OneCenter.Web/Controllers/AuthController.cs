@@ -40,7 +40,6 @@ namespace OneCenter.Web.Controllers
             return this.View();
         }
 
-        [NonAction]
         public void LoginProcess(string account)
         {
             var now = DateTime.Now;

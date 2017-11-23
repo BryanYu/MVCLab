@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using OneCenter.Models.ViewModels;
+
 namespace OneCenter.Web.Controllers
 {
     /// <summary>
@@ -140,6 +142,22 @@ namespace OneCenter.Web.Controllers
                 ViewBag.Error = e.Message;
                 return View();
             }
+        }
+
+        [HttpGet]
+        public ActionResult HtmlHeplerSample()
+        {
+            var viewModel = new TempData { Id = 1, Name = "Bryan", IsActive = true, Password = "1234" };
+            IEnumerable<SelectListItem> list =
+                new List<SelectListItem>()
+                    {
+                        new SelectListItem { Text = "序號1", Value = "1" },
+                        new SelectListItem { Text = "序號2", Value = "2",Selected = true},
+                        new SelectListItem { Text = "序號3", Value = "3" }
+                    };
+
+            viewModel.DrowSelectList = list;
+            return this.View(viewModel);
         }
     }
 }
