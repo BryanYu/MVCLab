@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneCenter.Utility", "OneCenter.Utility\OneCenter.Utility.csproj", "{413109AD-E3B2-4940-A634-3B73DBE2F347}"
 EndProject
@@ -18,9 +18,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{5BD8EF90-4EE3-4DBB-8511-25F479B3D2DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneCenter.Web", "OneCenter.Web\OneCenter.Web.csproj", "{71EA998C-97D4-4E08-81A4-A9186BC6F770}"
-	ProjectSection(ProjectDependencies) = postProject
-		{76895711-C020-4E2C-9DAC-72F73D6BDC44} = {76895711-C020-4E2C-9DAC-72F73D6BDC44}
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{40E0F82C-F7BA-4123-9AD7-278339591A02}"
 EndProject
@@ -29,9 +26,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{FFA0EDB4-059A-41D9-9016-E5B74510280C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneCenter.Models", "OneCenter.Models\OneCenter.Models.csproj", "{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C}"
-	ProjectSection(ProjectDependencies) = postProject
-		{71EA998C-97D4-4E08-81A4-A9186BC6F770} = {71EA998C-97D4-4E08-81A4-A9186BC6F770}
-	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource", "Resource", "{DFFE47C7-5824-4EA6-9CE9-89D03CB9DD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneCenter.Resource", "OneCenter.Resource\OneCenter.Resource.csproj", "{58A68159-A662-4AB9-B2DF-3523C46A1E6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{2870335A-D518-47A4-A92E-26F2BB8CAF01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneCenter.WebAPI", "OneCenter.WebAPI\OneCenter.WebAPI.csproj", "{A3BA2EFB-A166-416D-AB97-D833790CF8E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,14 @@ Global
 		{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A68159-A662-4AB9-B2DF-3523C46A1E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A68159-A662-4AB9-B2DF-3523C46A1E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A68159-A662-4AB9-B2DF-3523C46A1E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A68159-A662-4AB9-B2DF-3523C46A1E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BA2EFB-A166-416D-AB97-D833790CF8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BA2EFB-A166-416D-AB97-D833790CF8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BA2EFB-A166-416D-AB97-D833790CF8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BA2EFB-A166-416D-AB97-D833790CF8E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +84,10 @@ Global
 		{71EA998C-97D4-4E08-81A4-A9186BC6F770} = {5BD8EF90-4EE3-4DBB-8511-25F479B3D2DA}
 		{76895711-C020-4E2C-9DAC-72F73D6BDC44} = {40E0F82C-F7BA-4123-9AD7-278339591A02}
 		{FE1476D6-F4E0-4A04-99A0-823C82BE1D9C} = {FFA0EDB4-059A-41D9-9016-E5B74510280C}
+		{58A68159-A662-4AB9-B2DF-3523C46A1E6D} = {DFFE47C7-5824-4EA6-9CE9-89D03CB9DD27}
+		{A3BA2EFB-A166-416D-AB97-D833790CF8E2} = {2870335A-D518-47A4-A92E-26F2BB8CAF01}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A18817B3-727B-4FAC-B5CE-C8044245D3FF}
 	EndGlobalSection
 EndGlobal

@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using OneCenter.BLL.Admin;
 using OneCenter.Models.ViewModels.Auth;
 using System.Web.Security;
+
+using OneCenter.Resource;
+using System.Resources;
 
 namespace OneCenter.Web.Controllers
 {
@@ -63,6 +68,17 @@ namespace OneCenter.Web.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
+        }
+
+        [HttpGet]
+        public ActionResult Resource(string culture)
+        {
+            CultureInfo originalCulture = Thread.CurrentThread.CurrentCulture;
+            CultureInfo newCulture = new CultureInfo(culture);
+            Thread.CurrentThread.CurrentCulture = newCulture;
+            Thread.CurrentThread.CurrentUICulture = newCulture;
+
+            return this.View();
         }
     }
 }

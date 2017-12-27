@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OneCenter.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:OneCenter.WebAPI.Controllers.AccountController">
+            <summary>
+            帳號控制器
+            </summary>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.AccountController.Get">
+            <summary>
+            取得帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.AccountController.Post">
+            <summary>
+            新增帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.AccountController.Put">
+            <summary>
+            更新帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.AccountController.Delete">
+            <summary>
+            刪除帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OneCenter.WebAPI.Controllers.MemberController">
+            <summary>
+            會員控制器
+            </summary>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.MemberController.GetMember(System.String,System.String)">
+            <summary>
+            取得會員
+            </summary>
+            <param name="userName">會員名稱</param>
+            <param name="phone">手機</param>
+            <returns></returns>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.MemberController.AddMember">
+            <summary>
+            新增會員
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.MemberController.UpdateMember">
+            <summary>
+            更新會員
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OneCenter.WebAPI.Controllers.MemberController.DeleteMember">
+            <summary>
+            刪除會員
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
